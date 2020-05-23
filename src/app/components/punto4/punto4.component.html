@@ -1,0 +1,42 @@
+<br>
+<table class="table">
+    <thead class="text-center">
+        <tr>
+            <th scope="col">Vidas: {{vida}}</th>
+            <th scope="col">Puntaje: {{puntos}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <div class="card-body text-center" id="fondoJuego">
+                    <img class="img-fluid" src="{{urlImg}}" alt="">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="d-flex justify-content-center">
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="primera">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="segunda">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="tercera">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="cuarta">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="quinta">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="sexta">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="septima">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="octaba">_</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h3 class="text-center">{{palabraEsp}}</h3>
+            </td>
+        </tr>
+    </tbody>
+    <button type="button" class="btn btn-success" (click)="seleccionarPalabra()">Inicio</button>
+    <button type="button" class="btn btn-success" (click)="limpiarBotones()">Reiniciar</button>
+</table>
+
+
+<br>

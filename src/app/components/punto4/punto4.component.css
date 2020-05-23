@@ -1,0 +1,10 @@
+#fondoJuego{
+    background-color:darkkhaki;
+    height: auto;
+    flex: auto;
+    border-radius: 1rem;
+}
+#btnLetra{
+    width: 4rem;
+    height: 4rem;
+}

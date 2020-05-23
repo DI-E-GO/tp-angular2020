@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+    <form class="col-8">
+        <div class="form-text text-center">
+            <h2>Formulario</h2>
+        </div>
+        <br>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Usuario:</label>
+            <div class="col-sm-8">
+                <input type="email" class="form-control" id="inputEmail" name="email"
+                    placeholder="Ingrese su correo electrónico" [(ngModel)]="registro.usuario">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-4 col-form-label">Organización:</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="inputOrg" name="organizacion"
+                    placeholder="Ingrese nombre de su organización" [(ngModel)]="registro.nombreOrganizacion">
+            </div>
+        </div>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">Constancia:</legend>
+                <div class="col-sm-8">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="radioTrue"
+                            [(ngModel)]="registro.requiereConstancia" [value]="true" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Si
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="radioFalse"
+                            [(ngModel)]="registro.requiereConstancia" [value]="false">
+                        <label class="form-check-label" for="gridRadios2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" (click)="registrarFormulario()">Registrar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<h4>Tabla de Registros</h4>
+
+    <table class="table table-striped text-center">
+        <thead>
+            <tr>
+                <th scope="col-4">Usuario</th>
+                <th scope="col-4">Organizacón</th>
+                <th scope="col-4">Constancia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of registros">
+                <td>{{item.usuario}}</td>
+                <td>{{item.nombreOrganizacion | uppercase}}</td>
+                <td>{{item.requiereConstancia | const}}</td>
+            </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,31 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
+            Angular
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="text-center collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['inicio']" [routerLinkActive]="'active'">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['mensajeria']" [routerLinkActive]="'active'">Mensajería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['formulario']" [routerLinkActive]="'active'">Formulario de Asitencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['ventaPaseje']" [routerLinkActive]="'active'">Venta de Pasajes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['crucigrama']" [routerLinkActive]="'active'">Jugar Crucigrama</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

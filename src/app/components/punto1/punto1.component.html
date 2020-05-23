@@ -1,0 +1,51 @@
+<div id="sms" class="row justify-content-center">
+  <form id="mensajeForm" class="card col-md-6">
+    <div class="card-header" id="headerMensaje">Envía tu Mensaje</div>
+    <div class="card-body">
+      <div class="row form-group">
+        <label class="col-sm-12 col-md-4">Para</label>
+        <input class="form-control col-sm-12 col-md-8" type="number" name="txtPara" [(ngModel)]="mensaje.para" placeholder="Ingrese número" />
+      </div>
+      <div class="row form-group">
+        <label class="col-sm-12 col-md-4">De</label>
+        <input class="form-control col-sm-12 col-md-8" type="number" name="txtDesde" [(ngModel)]="mensaje.desde" placeholder="Ingrese otro número"/>
+      </div>
+      <label >Tu mensaje:</label>
+      <div class="text-right">
+        <span id="tamTexto">({{tamMaxTexto-tamTexto}} caracteres restantes)</span>
+      </div>
+      <div class="row form-group">
+        <textarea class="form-control" [maxlength]="tamMaxTexto" rows="5" name="txtTexto" [(ngModel)]="mensaje.texto"
+          (ngModelChange)="cambiarTamTexto()" placeholder="Escriba aquí su mensaje...">
+        </textarea>
+      </div>
+      <div class="row form-group">
+        <button id="btnLimpiar" type="button" class="btnMensaje btn btn-primary"
+          (click)="limpiarMensaje()">Limpiar</button>
+        <button id="btnEnviar" type="button" class="btnMensaje btn btn-primary" data-toggle="modal"
+          data-target="#staticBackdrop" (click)="enviarMensaje()">Enviar</button>
+      </div>
+    </div>
+  </form>
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Enviado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="borrarMensaje()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center" *ngFor="let item of mensajes">
+          <label for="">Para: {{item.para}}</label><br>
+          <label for="">De: {{item.desde}}</label><br>
+          <label for="">Mensaje: {{item.texto}}</label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" (click)="borrarMensaje()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
