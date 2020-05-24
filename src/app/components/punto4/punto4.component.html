@@ -17,14 +17,49 @@
         <tr>
             <td colspan="2">
                 <div class="d-flex justify-content-center">
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="primera">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="segunda">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="tercera">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="cuarta">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="quinta">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="sexta">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="septima">_</button>
-                    <button id="btnLetra" type="button" class="btn btn-outline-success" *ngIf="octaba">_</button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="primera" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra1">{{letras[0] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="segunda" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra2">{{letras[1] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="tercera" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra3">{{letras[2] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="cuarta" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra4">{{letras[3] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="quinta" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra5">{{letras[4] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="sexta" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra6">{{letras[5] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="septima" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra7">{{letras[6] | uppercase}}</h3></button>
+                    <button id="btnLetra" type="button" class="btn btn-outline-success" 
+                    *ngIf="octaba" data-toggle="modal" data-target="#modalLetra">
+                    <h3 *ngIf="letra8">{{letras[7] | uppercase}}</h3></button>
+                    
+                    <div class="modal fade" id="modalLetra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Ingresa una Letra</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body text-center">
+                              <input name="letra" class="text-center" id="inputLetras" type="text" maxlength="1" size="1" [(ngModel)]="letraSeleccionada">
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-success" data-dismiss="modal" (click)="compararLetra()">Ok</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </td>
         </tr>
@@ -34,8 +69,7 @@
             </td>
         </tr>
     </tbody>
-    <button type="button" class="btn btn-success" (click)="seleccionarPalabra()">Inicio</button>
-    <button type="button" class="btn btn-success" (click)="limpiarBotones()">Reiniciar</button>
+    <button type="button" class="btn btn-success" (click)="refresh()">Inicio</button>
 </table>
 
 
